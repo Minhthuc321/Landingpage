@@ -1,0 +1,2 @@
+import Link from "next/link";import { siteConfig } from "@/data/site";import { ButtonLink } from "@/components/ui/ButtonLink";
+export function Header(){return <header><div className="container nav"><Link className="logo" href="#home"><span>TT</span><div>{siteConfig.brandName}<small>HỆ SINH THÁI AI THỰC CHIẾN</small></div></Link><nav><Link href="#features">Giải pháp</Link><Link href="#content">Nội dung</Link><Link href="#courses">Khóa học</Link><Link href="#about">Về tôi</Link></nav><ButtonLink href="#lead" location="header">Bắt đầu với AI</ButtonLink></div></header>}

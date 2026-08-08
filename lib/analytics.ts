@@ -1,0 +1,5 @@
+import type { UtmData } from "@/types";
+declare global { interface Window { dataLayer?:Record<string,unknown>[]; fbq?:(...args:unknown[])=>void; ttq?:{track:(name:string,data:Record<string,unknown>)=>void} } }
+export function trackEvent(name:string, properties:Record<string,unknown>={}) { if(typeof window==="undefined") return; window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:name,...properties}); window.fbq?.("trackCustom",name,properties); window.ttq?.track(name,properties); }
+export function trackCta(location:string,button:string){trackEvent("cta_click",{location,button,source:getUtm().utm_source||"direct"});}
+export function getUtm():UtmData { if(typeof window==="undefined") return {}; const params=new URLSearchParams(location.search); const stored=sessionStorage.getItem("thuc-tinh-ai-utm"); const current=Object.fromEntries(["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>[k,params.get(k)]).filter(([,v])=>v)) as UtmData; if(Object.keys(current).length){sessionStorage.setItem("thuc-tinh-ai-utm",JSON.stringify(current));return current;} return stored?JSON.parse(stored):{}; }
