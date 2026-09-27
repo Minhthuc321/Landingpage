@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Minh Thức | Chuyên Gia Giải Pháp Tài Chính & Tín Dụng Ngân Hàng</title>
+    <meta name="description" content="Tư vấn giải pháp vay thế chấp, vay tín chấp, mở thẻ tín dụng hạn mức cao, đáo hạn & tái cấu trúc nợ. Hỗ trợ hồ sơ khó, giải ngân nhanh 24h, lãi suất ưu đãi.">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent-gold: #f59e0b;
+            --accent-gold-hover: #d97706;
+            --emerald: #10b981;
+            --emerald-dark: #059669;
+            --blue-glow: #38bdf8;
+            --bg-dark: #070d19;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow-glow: 0 10px 40px -10px rgba(16, 185, 129, 0.25);
+            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 60%);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(7, 13, 25, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--emerald));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5);
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        }
+
+        .btn-emerald {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            position: relative;
+            background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 13, 25, 0.85) 0%, rgba(7, 13, 25, 0.96) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #f59e0b, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Hero Card / Portrait */
+        .hero-card-wrapper {
+            position: relative;
+        }
+
+        .hero-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-card);
+            background: var(--card-bg);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .hero-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(0deg, rgba(7, 13, 25, 0.95) 0%, rgba(7, 13, 25, 0) 100%);
+        }
+
+        .hero-card-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .hero-card-role {
+            font-size: 14px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Floating Badges */
+        .float-badge {
+            position: absolute;
+            padding: 12px 20px;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .float-badge-1 {
+            top: 40px;
+            left: -30px;
+        }
+
+        .float-badge-2 {
+            bottom: 60px;
+            right: -30px;
+            animation-delay: -2s;
+        }
+
+        .float-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .float-badge-2 .float-icon {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .float-text h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .float-text p {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Bank Partners Marquee */
+        .bank-partners {
+            padding: 40px 0;
+            border-y: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        .bank-partners p {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .bank-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 24px;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+
+        .bank-chip {
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-weight: 700;
+            font-size: 15px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .bank-chip:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        /* Section Header Common */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-sub {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px 28px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-features li {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li i {
+            color: var(--emerald);
+            font-size: 12px;
+        }
+
+        .service-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+
+        .service-card:hover .service-link {
+            gap: 12px;
+        }
+
+        /* Calculator Section */
+        .calculator-sec {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.5);
+            border-y: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .calc-wrapper {
+            background: var(--card-bg);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 28px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .calc-inputs h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        .form-label-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        .form-val {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #1e293b;
+            outline: none;
+            accent-color: var(--accent-gold);
+            cursor: pointer;
+        }
+
+        .calc-type-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .calc-type-btn {
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .calc-type-btn.active {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .calc-result-box {
+            background: linear-gradient(145deg, #070d19, #0f172a);
+            border-radius: 20px;
+            padding: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .result-main {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-main p {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .result-main h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--emerald);
+        }
+
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .breakdown-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .breakdown-item p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .breakdown-item h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 32px 24px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin: 0 auto 20px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Process Steps */
+        .process {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .process-step {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 32px 24px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--emerald));
+            color: #000;
+            font-weight: 800;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .process-step h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .testi-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 32px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .testi-text {
+            font-size: 14px;
+            color: #cbd5e1;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .user-details h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .user-details p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            padding: 80px 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-radius: 32px;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-box h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .cta-box p {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 36px;
+        }
+
+        /* Floating Contact Buttons */
+        .floating-contacts {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .float-zalo {
+            background: #0088ff;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .float-phone {
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Modal Form */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: #0f172a;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .modal-backdrop.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .modal-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 16px;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #050a14;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid, .calc-wrapper { grid-template-columns: 1fr; }
+            .services-grid, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid, .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-title { font-size: 38px; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            .services-grid, .testi-grid, .why-grid, .process-steps { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 30px; }
+            .calc-wrapper { padding: 24px; }
+            .float-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-bg"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">
+                    <div class="logo-icon">NT</div>
+                    <div class="logo-text">
+                        <h1>NGUYỄN MINH THỨC</h1>
+                        <p>Tư Vấn Tài Chính & Tín Dụng</p>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#about">Giới Thiệu</a></li>
+                    <li><a href="#services">Dịch Vụ Tín Dụng</a></li>
+                    <li><a href="#calculator">Tính Lãi Vay</a></li>
+                    <li><a href="#process">Quy Trình</a></li>
+                    <li><a href="#testimonials">Đánh Giá</a></li>
+                </ul>
+
+                <div class="header-cta">
+                    <a href="tel:0988888888" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 0988.xxx.xxx</a>
+                    <button class="btn btn-gold" onclick="openModal()"><i class="fa-solid fa-paper-plane"></i> Tư Vấn Ngay</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-shield-halved"></i> Chuyên Gia Tư Vấn Tín Dụng Ngân Hàng #1
+                    </div>
+                    <h1 class="hero-title">
+                        Giải Pháp <span>Tài Chính & Tín Dụng</span> Tối Ưu Tối Đa Quyền Lợi Của Bạn
+                    </h1>
+                    <p class="hero-desc">
+                        Chào bạn, tôi là <strong>Nguyễn Minh Thức</strong> - Chuyên viên cao cấp giải pháp tín dụng. Tôi đồng hành cùng bạn duyệt nhanh khoản vay ngân hàng, tối ưu lãi suất, xử lý hồ sơ khó & tái cấu trúc dòng tiền an toàn.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-gold" onclick="openModal()"><i class="fa-solid fa-calendar-check"></i> Đăng Ký Tư Vấn Miễn Phí</button>
+                        <a href="#calculator" class="btn btn-emerald"><i class="fa-solid fa-calculator"></i> Tính Tiền Lãi Vay Ngay</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Năm Kinh Nghiệm</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+ Tỷ</h3>
+                            <p>Đã Giải Ngân</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>2.500+</h3>
+                            <p>Khách Hàng Hài Lòng</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>99%</h3>
+                            <p>Hồ Sơ Được Duyệt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card-wrapper">
+                    <!-- Floating Badge 1 -->
+                    <div class="float-badge float-badge-1">
+                        <div class="float-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="float-text">
+                            <h4>Duyệt Nhanh 24H</h4>
+                            <p>Thủ tục đơn giản, giải ngân nhanh</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 -->
+                    <div class="float-badge float-badge-2">
+                        <div class="float-icon"><i class="fa-solid fa-percent"></i></div>
+                        <div class="float-text">
+                            <h4>Lãi Suất Chỉ Từ 0.5%</h4>
+                            <p>Ưu đãi độc quyền các ngân hàng</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-card">
+                        <img src="./assets/advisor.jpg" alt="Nguyễn Minh Thức - Chuyên gia Tài chính Ngân hàng">
+                        <div class="hero-card-overlay">
+                            <div class="hero-card-name">Nguyễn Minh Thức</div>
+                            <div class="hero-card-role">Senior Financial & Credit Consultant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bank Partners Marquee -->
+    <section class="bank-partners">
+        <div class="container">
+            <p>Liên kết & Đối tác chiến lược 20+ Ngân hàng hàng đầu Việt Nam</p>
+            <div class="bank-logos">
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> Vietcombank</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> Techcombank</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> MB Bank</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> VPBank</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> ACB</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> BIDV</div>
+                <div class="bank-chip"><i class="fa-solid fa-building-columns"></i> TPBank</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-sub">Dịch Vụ Trọng Tâm</span>
+                <h2 class="section-title">Giải Pháp Tín Dụng Toàn Diện</h2>
+                <p class="section-desc">Được thiết kế riêng theo điều kiện tài chính và nhu cầu cụ thể của từng khách hàng.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+                    <h3 class="service-title">Vay Thế Chấp Bất Động Sản</h3>
+                    <p class="service-desc">Hỗ trợ vay mua nhà, đất, kinh doanh thế chấp Sổ đỏ/Sổ hồng với định giá tối đa.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hạn mức lên tới 85% giá trị định giá</li>
+                        <li><i class="fa-solid fa-check"></i> Thời gian vay linh hoạt tới 35 năm</li>
+                        <li><i class="fa-solid fa-check"></i> Lãi suất ưu đãi cố định 12-36 tháng</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Vay Thế Chấp')" class="service-link">Tư vấn khoản vay <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3 class="service-title">Vay Tiêu Dùng Tín Chấp</h3>
+                    <p class="service-desc">Khoản vay không cần tài sản thế chấp, thẩm định nhanh chóng dựa trên uy tín cá nhân.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hạn mức từ 50tr đến 500 triệu VNĐ</li>
+                        <li><i class="fa-solid fa-check"></i> Không cần thế chấp tài sản</li>
+                        <li><i class="fa-solid fa-check"></i> Duyệt & giải ngân thần tốc trong 24h</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Vay Tín Chấp')" class="service-link">Tư vấn khoản vay <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <h3 class="service-title">Mở Thẻ Tín Dụng Hạn Mức Cao</h3>
+                    <p class="service-desc">Tư vấn mở thẻ tín dụng ngân hàng hạn mức lớn, hoàn tiền cao và ưu đãi VIP.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hạn mức từ 100tr đến 1 tỷ VNĐ</li>
+                        <li><i class="fa-solid fa-check"></i> Miễn phí thường niên & rút tiền mặt</li>
+                        <li><i class="fa-solid fa-check"></i> Tặng lượt vào phòng chờ thương gia</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Thẻ Tín Dụng')" class="service-link">Tư vấn mở thẻ <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h3 class="service-title">Đáo Hạn & Tái Cấu Trúc Nợ</h3>
+                    <p class="service-desc">Giải chấp rút sổ đáo hạn ngân hàng an toàn, hạ lãi suất khoản vay cũ tiết kiệm hàng tháng.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hỗ trợ nguồn tiền đáo hạn nhanh</li>
+                        <li><i class="fa-solid fa-check"></i> Chuyển nợ sang ngân hàng lãi suất thấp</li>
+                        <li><i class="fa-solid fa-check"></i> Tuyệt đối an toàn, bảo mật Sổ đỏ</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Đáo Hạn Nợ')" class="service-link">Tư vấn đáo hạn <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3 class="service-title">Vốn Tín Dụng Doanh Nghiệp</h3>
+                    <p class="service-desc">Tài trợ vốn lưu động, vay mua nhà xưởng máy móc thiết bị cho doanh nghiệp vừa & nhỏ (SME).</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hạn mức tín dụng doanh nghiệp lớn</li>
+                        <li><i class="fa-solid fa-check"></i> Tỷ lệ tài trợ cao, lãi suất cạnh tranh</li>
+                        <li><i class="fa-solid fa-check"></i> Hỗ trợ Bảo lãnh & L/C thương mại</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Vay Doanh Nghiệp')" class="service-link">Tư vấn doanh nghiệp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3 class="service-title">Tư Vấn Xử Lý Hồ Sơ Khó</h3>
+                    <p class="service-desc">Giải pháp cho khách hàng thu nhập tự do, vướng lịch sử CIC hoặc bị từ chối ở nơi khác.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Đánh giá CIC & lập phương án giải trình</li>
+                        <li><i class="fa-solid fa-check"></i> Chứng minh thu nhập thực tế linh hoạt</li>
+                        <li><i class="fa-solid fa-check"></i> Tỷ lệ hồ sơ được duyệt >95%</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModal('Xử Lý Hồ Sơ Khó')" class="service-link">Gửi hồ sơ thẩm định <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator Section -->
+    <section class="calculator-sec" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-sub">Công Cụ Thông Minh</span>
+                <h2 class="section-title">Bảng Tính Lãi Vay Tín Dụng</h2>
+                <p class="section-desc">Dự toán chính xác số tiền trả gốc & lãi hàng tháng giúp bạn chủ động kế hoạch tài chính.</p>
+            </div>
+
+            <div class="calc-wrapper">
+                <div class="calc-inputs">
+                    <h3>Thông Số Khoản Vay</h3>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <span class="form-label">Số Tiền Vay (VNĐ):</span>
+                            <span class="form-val" id="valAmount">1,000,000,000 VNĐ</span>
+                        </div>
+                        <input type="range" id="inputAmount" min="50000000" max="10000000000" step="50000000" value="1000000000">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <span class="form-label">Thời Gian Vay:</span>
+                            <span class="form-val" id="valTenure">120 tháng (10 năm)</span>
+                        </div>
+                        <input type="range" id="inputTenure" min="6" max="360" step="6" value="120">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <span class="form-label">Lãi Suất Ưu Đãi (%/năm):</span>
+                            <span class="form-val" id="valRate">7.5 % / năm</span>
+                        </div>
+                        <input type="range" id="inputRate" min="4.5" max="15.0" step="0.1" value="7.5">
+                    </div>
+
+                    <div class="form-label">Phương Thức Tính Lãi:</div>
+                    <div class="calc-type-buttons">
+                        <button class="calc-type-btn active" onclick="setCalcType('decline')">Dư Nợ Giảm Dần</button>
+                        <button class="calc-type-btn" onclick="setCalcType('flat')">Dư Nợ Ban Đầu</button>
+                    </div>
+                </div>
+
+                <div class="calc-result-box">
+                    <div>
+                        <div class="result-main">
+                            <p>Tổng Tiền Trả Tháng Đầu Tiên</p>
+                            <h2 id="resTotalMonth">14,583,333 VNĐ</h2>
+                        </div>
+
+                        <div class="result-breakdown">
+                            <div class="breakdown-item">
+                                <p>Tiền Gốc Hàng Tháng</p>
+                                <h4 id="resPrincipal">8,333,333 VNĐ</h4>
+                            </div>
+                            <div class="breakdown-item">
+                                <p>Tiền Lãi Tháng Đầu</p>
+                                <h4 id="resInterest">6,250,000 VNĐ</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-gold" style="width: 100%;" onclick="openModal('Đăng ký khoản vay dự toán')">
+                        <i class="fa-solid fa-file-circle-check"></i> Đăng Ký Khoản Vay Này
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-sub">Cam Kết Chất Lượng</span>
+                <h2 class="section-title">Tại Sao Nên Chọn Minh Thức Đồng Hành?</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-user-lock"></i></div>
+                    <h3>Bảo Mật 100%</h3>
+                    <p>Mọi thông tin cá nhân và tài sản của khách hàng được bảo mật tuyệt đối theo chuẩn ngân hàng.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3>Tối Ưu Lãi Suất</h3>
+                    <p>Luôn lựa chọn ngân hàng có gói vay ưu đãi nhất phù hợp với mục đích và điều kiện của bạn.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Tốc Độ Giải Ngân</h3>
+                    <p>Quy trình thẩm định rút gọn, hỗ trợ theo sát hồ sơ giúp giải ngân đúng tiến độ cam kết.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Minh Bạch Chi Phí</h3>
+                    <p>Tư vấn rõ ràng mọi điều khoản, tuyệt đối không phát sinh phụ phí ẩn ngoài hợp đồng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-sub">Quy Trình Chuẩn Sơ</span>
+                <h2 class="section-title">4 Bước Nhận Khoản Vay Nhanh Chóng</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <h3>Tư Vấn & Kiểm Tra CIC</h3>
+                    <p>Tiếp nhận nhu cầu, kiểm tra lịch sử CIC miễn phí và đánh giá sơ bộ hồ sơ trong 15 phút.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <h3>Lập Phương Án Vay</h3>
+                    <p>Xây dựng phương án vay tối ưu lãi suất, chuẩn bị đầy đủ giấy tờ hồ sơ chứng minh thu nhập.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <h3>Thẩm Định Ngân Hàng</h3>
+                    <p>Nộp hồ sơ trực tiếp tới ngân hàng đối tác phù hợp và theo dõi quá trình phê duyệt tín dụng.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <h3>Công Chứng & Giải Ngân</h3>
+                    <p>Ký hợp đồng tín dụng, thế chấp tài sản (nếu có) và nhận tiền giải ngân vào tài khoản.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-sub">Đánh Giá Thực Tế</span>
+                <h2 class="section-title">Khách Hàng Nói Gì Về Minh Thức</h2>
+            </div>
+
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Tôi cần khoản vay thế chấp 3 tỷ gấp để bổ sung vốn nhập hàng. Anh Thức hỗ trợ định giá cao và giải ngân chỉ trong 3 ngày làm việc. Lãi suất cực tốt!"</p>
+                    <div class="user-info">
+                        <div class="user-avatar">H</div>
+                        <div class="user-details">
+                            <h4>Anh Hoàng Nam</h4>
+                            <p>Chủ Doanh Nghiệp Bất Động Sản</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Hồ sơ thu nhập tự do của mình bị 2 bên từ chối. Nhờ anh Thức hướng dẫn làm phương án giải trình, mình đã được duyệt khoản vay 500 triệu tín chấp rất mượt."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">M</div>
+                        <div class="user-details">
+                            <h4>Chị Thanh Mai</h4>
+                            <p>Kinh Doanh Online Tự Do</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Thẻ tín dụng hạn mức 200 triệu mở rất nhanh. Anh Thức tư vấn chi tiết cách quản lý dòng tiền và tận dụng miễn lãi 45 ngày rất hiệu quả."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">T</div>
+                        <div class="user-details">
+                            <h4>Anh Quốc Tuấn</h4>
+                            <p>Quản Lý Dự Án CNTT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Bạn Đang Cần Tư Vấn Khoản Vay Phù Hợp?</h2>
+                <p>Đừng để các thủ tục rườm rà làm chậm trễ kế hoạch tài chính của bạn. Hãy để Nguyễn Minh Thức tư vấn giải pháp tốt nhất hoàn toàn miễn phí!</p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <button class="btn btn-gold" onclick="openModal('Đăng ký tư vấn CTA')"><i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu Tư Vấn Ngay</button>
+                    <a href="tel:0988888888" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Gọi Hotline: 0988.xxx.xxx</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Action -->
+    <div class="floating-contacts">
+        <a href="https://zalo.me" target="_blank" class="float-btn float-zalo">Zalo</a>
+        <a href="tel:0988888888" class="float-btn float-phone"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal-backdrop" id="consultModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="modal-title">Đăng Ký Tư Vấn Tín Dụng</h3>
+            <p class="modal-desc" id="modalServiceDesc">Nhập thông tin bên dưới, Minh Thức sẽ liên hệ hỗ trợ bạn trong vòng 15 phút.</p>
+            
+            <form onsubmit="submitForm(event)">
+                <input type="text" class="form-input" placeholder="Họ và tên của bạn *" required>
+                <input type="tel" class="form-input" placeholder="Số điện thoại / Zalo *" required>
+                <select class="form-input" id="modalServiceSelect" style="color: #fff; background: #1e293b;">
+                    <option value="Vay Thế Chấp BĐS">Vay Thế Chấp BĐS / Sổ Đỏ</option>
+                    <option value="Vay Tiêu Dùng Tín Chấp">Vay Tiêu Dùng Tín Chấp</option>
+                    <option value="Mở Thẻ Tín Dụng">Mở Thẻ Tín Dụng Hạn Mức Cao</option>
+                    <option value="Đáo Hạn & Tái Cấu Trúc">Đáo Hạn & Tái Cấu Trúc Nợ</option>
+                    <option value="Vay Doanh Nghiệp">Vốn Tín Dụng Doanh Nghiệp</option>
+                    <option value="Hồ Sơ Khó">Tư Vấn Hồ Sơ Khó / CIC</option>
+                </select>
+                <input type="text" class="form-input" placeholder="Số tiền cần vay dự kiến (VNĐ)">
+                <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">
+                    <i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu Tư Vấn (Miễn Phí)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon">NT</div>
+                        <div class="logo-text">
+                            <h1>NGUYỄN MINH THỨC</h1>
+                            <p>Tư Vấn Tài Chính & Tín Dụng</p>
+                        </div>
+                    </a>
+                    <p>Chuyên gia tư vấn giải pháp tín dụng ngân hàng, vay thế chấp, tín chấp & mở thẻ tín dụng hàng đầu. Cam kết uy tín, minh bạch và tối ưu quyền lợi khách hàng.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Dịch Vụ Chính</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Vay Thế Chấp Sổ Đỏ</a></li>
+                        <li><a href="#services">Vay Tín Chấp Lương</a></li>
+                        <li><a href="#services">Mở Thẻ Tín Dụng VIP</a></li>
+                        <li><a href="#services">Đáo Hạn Ngân Hàng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Về Minh Thức</a></li>
+                        <li><a href="#calculator">Bảng Tính Lãi Vay</a></li>
+                        <li><a href="#process">Quy Trình 4 Bước</a></li>
+                        <li><a href="#testimonials">Đánh Giá Khách Hàng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Thông Tin Liên Hệ</h4>
+                    <p><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Hà Nội / TP. Hồ Chí Minh & Toàn quốc</p>
+                    <p><i class="fa-solid fa-phone" style="color: var(--accent-gold);"></i> Hotline/Zalo: 0988.xxx.xxx</p>
+                    <p><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> minhthuc.credit@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 Nguyễn Minh Thức - Credit & Financial Advisor. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Google Apps Script Web App URL (Dán URL của bạn vào đây khi triển khai)
+        const GOOGLE_SHEET_SCRIPT_URL = "";
+
+        // Loan Calculator Script
+        const inputAmount = document.getElementById('inputAmount');
+        const inputTenure = document.getElementById('inputTenure');
+        const inputRate = document.getElementById('inputRate');
+
+        const valAmount = document.getElementById('valAmount');
+        const valTenure = document.getElementById('valTenure');
+        const valRate = document.getElementById('valRate');
+
+        const resTotalMonth = document.getElementById('resTotalMonth');
+        const resPrincipal = document.getElementById('resPrincipal');
+        const resInterest = document.getElementById('resInterest');
+
+        let calcType = 'decline';
+
+        function formatVND(num) {
+            return new Intl.NumberFormat('vi-VN').format(Math.round(num)) + ' VNĐ';
+        }
+
+        function calculateLoan() {
+            const P = parseFloat(inputAmount.value);
+            const months = parseInt(inputTenure.value);
+            const annualRate = parseFloat(inputRate.value) / 100;
+            const monthlyRate = annualRate / 12;
+
+            valAmount.textContent = formatVND(P);
+            valTenure.textContent = months + ' tháng (' + (months / 12).toFixed(1) + ' năm)';
+            valRate.textContent = inputRate.value + ' % / năm';
+
+            const monthlyPrincipal = P / months;
+            const monthlyInterestFirst = P * monthlyRate;
+            const totalFirstMonth = monthlyPrincipal + monthlyInterestFirst;
+
+            resPrincipal.textContent = formatVND(monthlyPrincipal);
+            resInterest.textContent = formatVND(monthlyInterestFirst);
+            resTotalMonth.textContent = formatVND(totalFirstMonth);
+        }
+
+        function setCalcType(type) {
+            calcType = type;
+            document.querySelectorAll('.calc-type-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            calculateLoan();
+        }
+
+        inputAmount.addEventListener('input', calculateLoan);
+        inputTenure.addEventListener('input', calculateLoan);
+        inputRate.addEventListener('input', calculateLoan);
+
+        // Initial Calculation
+        calculateLoan();
+
+        // Modal Controls
+        function openModal(serviceName = '') {
+            const modal = document.getElementById('consultModal');
+            modal.classList.add('active');
+            if (serviceName) {
+                const select = document.getElementById('modalServiceSelect');
+                for (let opt of select.options) {
+                    if (opt.value.toLowerCase().includes(serviceName.toLowerCase())) {
+                        opt.selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('consultModal').classList.remove('active');
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi thông tin...';
+            submitBtn.disabled = true;
+
+            const fullName = e.target.querySelector('input[placeholder*="Họ và tên"]').value;
+            const phone = e.target.querySelector('input[placeholder*="Số điện thoại"]').value;
+            const service = document.getElementById('modalServiceSelect').value;
+            const amount = e.target.querySelector('input[placeholder*="Số tiền"]').value || 'Chưa nhập';
+
+            const formData = { fullName, phone, service, amount };
+
+            try {
+                if (GOOGLE_SHEET_SCRIPT_URL) {
+                    await fetch(GOOGLE_SHEET_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                }
+                alert('🎉 ĐĂNG KÝ THÀNH CÔNG!\n\nCảm ơn anh/chị ' + fullName + '. Nguyễn Minh Thức đã nhận được thông tin và sẽ gọi lại hỗ trợ tư vấn trong vòng 15 phút!');
+                e.target.reset();
+                closeModal();
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Đã gửi thông tin! Minh Thức sẽ gọi lại hỗ trợ bạn ngay.');
+                closeModal();
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

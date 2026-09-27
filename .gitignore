@@ -1,0 +1,24 @@
+# Zip archives
+*.zip
+
+# Temporary scripts and logs
+inspect_zips.ps1
+analyze_all.py
+check_wordpress.py
+check_wp_config.py
+extract_templates.py
+extracted_templates/
+02_hyperframes_templates_alt/
+wordpress/
+
+# PDF / DOCX reference files
+*.pdf
+*.docx
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# System / brain files
+brain/
+scratch/
